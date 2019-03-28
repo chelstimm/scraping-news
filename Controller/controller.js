@@ -56,7 +56,8 @@ mongoose.connect(MONGODB_URI, {
             });
       });
 
-      res.redirect("/");
+     res.redirect("/");
+    
       // Send a message to the client
       res.send("Scrape Complete");
       // res.redirect("/");
