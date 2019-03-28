@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Tab Title -->
+    <title>News Scraper</title>
+    <!-- View Port Size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Materialize - Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <!-- Materialize - Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+
+    <!-- Link in jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+     <script type="text/javascript" src="/javascript/app.js"></script>
+  </head>
+
+  <body>
+  
+    <!-- Fixed Nav Bar -->
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper teal lighten-3">
+          <a href="" class="brand-logo"><i class="material-icons">view_day</i> News Scraper</a>
+          <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">Menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="http://www.theonion.com/" target="_new">The Onion</a></li>
+            <li><a href="https://github.com/chelstimm/Scraping.git" target="_new">Github Repo</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Page Content -->
+    <main> 
+      <!-- Site Info Container -->
+      <div class="container">
+        <ul class="collection with-header">
+          <li class="collection-header red accent-1 white-text"><h4><b>Welcome to News Scraper!</b></h4></li>
+          <li class="collection-item">This application lets you read and comment on news articles that were scrapped from the web.</li>
+          <li class="collection-item"><div>Click <i class="material-icons">language</i> to view article summary.</div></li>
+          <li class="collection-item"><div>Click <i class="material-icons">comment</i> to add a comment.</div></li>
+          <li class="collection-item"><div>Click <i class="material-icons">bookmark</i> to read comments.</div></li>
+        </ul>
+      </div>
+
+
+      <!-- Render All Articles -->
+      <div class="container">
+        {{{body}}}
+      </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="page-footer teal lighten-3">
+      <div class="footer-copyright">
+        <div class="container center">
+        © All article data was scraped from 
+        <a class="white-text text-lighten-4" href="http://www.theonion.com/">www.theonion.com</a>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <!-- Materialize - Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>   
+      </body>
+
+</html>
