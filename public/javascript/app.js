@@ -81,19 +81,21 @@ $(document).on("click", ".collapsible-header", function(event) {
     $("#author_name").val("");
     $("#comment_box").val("");
   });
-  
-  $(document).on("submit", ".delete-form", function(event) {
-    event.preventDefault();
-    var commentId = $(this).find(".delete-comment-button").attr("data-id");
-    console.log("todo delete", commentId);
-  
-    //ajax call with delete method call the route (/deleteComment/:id")
-    $.ajax({
-      method: "DELETE",
-      url: "/deleteComment/:id" + commentId,
-    }).then(function(){
-      // $(".viewComment").removeAttr("data-id");
-      viewComment.removeAttr("data-id");
-      console.log("comment deleted");
-  });
-  });
+
+
+      $(document).on("submit", ".delete-form", function(event) {
+        event.preventDefault();
+        var commentId = $(this).find(".delete-comment-button").attr("data-id");
+        console.log("delete", commentId);
+      
+        //ajax call with delete method call the route (/deleteComment/:id")
+        $.ajax({
+          method: "GET",
+          url: "/deleteComment/:id" + commentId
+        })
+        .then(function(data) {
+          $(".collection", commentId).parent().remove();
+          console.log("deleted");
+
+        })
+      });

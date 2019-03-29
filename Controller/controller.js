@@ -127,16 +127,18 @@ router.post("/articles/:id", function (req, res) {
 });
 router.delete("/deleteComment/:id", function (req, res) {
   console.log(req.params.id);
-  db.Comment.deleteOne({
-      _id: req.params.id
-    })
-    .then(function (dbComment) {
-      res.json(dbComment);
-      console.log("delete complete");
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
+  db.Comment.remove({ _id: req.params.id
+    }),
+   function (err, response) {
+     if (err) {
+       console.log(err);
+      res.send(err);
+     }
+     else {
+       console.log(response);
+       res.send(response);
+     }
+    };
 });
 
 module.exports = router;
